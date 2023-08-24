@@ -1,0 +1,1141 @@
+@font-face {
+    font-family: 'Poppins';
+    src: url('./assets/fonts/Poppins/Poppins-Black.ttf') format('truetype');
+    /* Добавьте другие варианты шрифта, если они доступны */
+}
+
+@font-face {
+    font-family: 'Montserrat';
+    src: url('./assets/fonts/Montserrat/static/Montserrat-Regular.ttf') format('truetype');
+    /* Добавьте другие варианты шрифта, если они доступны */
+}
+
+@font-face {
+    font-family: 'Montserrat bolt';
+    src: url('./assets/fonts/Montserrat/static/Montserrat-Bold.ttf') format('truetype');
+    /* Добавьте другие варианты шрифта, если они доступны */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    width: 100%;
+    min-height: 100vh;
+    /* background: black; */
+}
+
+.logo__index {
+    /* width: 102px;
+    height: 94px; */
+    /* width: 122px;
+    height: 122px; */
+    width: 80px;
+    height: 80px;
+    /* background-size: cover; */
+
+    background: url(assets/images/photo_2023-06-13_20-51-28.jpg);
+    background-size: 80px 80px;
+
+    /* background-repeat: no-repeat; */
+}
+
+.logo__index_wrap {
+    display: flex;
+    height: 90px;
+    align-items: center;
+
+}
+
+.header__index {
+    /* background: red; */
+    /* width: 1200px; */
+    width: 90%;
+    height: 90px;
+
+    /* height: 122px; */
+    display: flex;
+    margin: 0 auto;
+    justify-content: space-between;
+
+    /* z-index: 100; */
+}
+
+.header__index_wrap {
+    position: fixed;
+    background: white;
+    width: 100%;
+
+}
+
+.nav__index_ul {
+    display: flex;
+    list-style: none;
+    justify-content: space-between;
+    width: 750px;
+}
+
+.nav__index {
+    display: flex;
+    /* width: 650px; */
+    align-items: center;
+}
+
+.nav__index_link {
+    color: black;
+    text-decoration: none;
+    font-family: 'Montserrat';
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.nav__index_link:hover {
+    color: #1d25a4;
+    transition: 0.5;
+}
+
+.header__button {
+    width: 120px;
+    height: 50px;
+    border-radius: 25px;
+    background: #1d25a4;
+    font-family: 'Montserrat';
+    color: white;
+    font-size: 16px;
+    /* тут возможны изменения, маржин фуфуфу */
+    margin-left: 10px;
+}
+
+.header__button:hover {
+    background: blue;
+    cursor: pointer;
+    transition: 0.5s;
+
+}
+
+.header__button_action_index {
+    display: flex;
+    height: 90px;
+    align-items: center;
+}
+
+.main__index {
+    padding-top: 90px;
+    min-height: 100vh;
+}
+
+.main__section {
+    width: 100%;
+    height: 800px;
+    /* background: url(assets/images/pexels-torsten.jpg); */
+    background: url(assets/images/jkh2.png);
+    /* background: url(assets/images/trubi3.jpg); */
+    /* background: url(assets/images/pexels-tinny-hu.jpg); */
+    /* background-position: 50px -25px; */
+    background-size: 100% 800px;
+    background-attachment: fixed;
+}
+
+
+.main__section_left {
+    padding-top: 80px;
+    width: 670px;
+    height: 450px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.main__left_title {
+    font-family: 'Montserrat bolt';
+    font-size: 35px;
+    font-weight: 700;
+    color: white;
+    /* color: #546070; */
+    /* color: #1d25a4; */
+    /* color: black; */
+    width: 670px;
+}
+
+.main__left_text {
+    font-family: 'Montserrat';
+    font-size: 14px;
+    font-weight: 700;
+    color: white;
+    /* color: #546070; */
+    /* color: #1d25a4; */
+    /* color: black; */
+    line-height: 30px;
+
+}
+
+.main__button {
+    width: 120px;
+    height: 50px;
+    border-radius: 25px;
+    background: #1d25a4;
+    /* background: #9b40fd; */
+    font-family: 'Montserrat';
+    color: white;
+    font-size: 16px;
+}
+
+.main__button:hover {
+    background: blue;
+    cursor: pointer;
+    transition: 0.5s;
+
+}
+
+
+.container {
+    width: 90%;
+    margin: 0 auto;
+}
+
+/* .main__section_wrap{
+
+} */
+
+
+/* __________________Услиги__________________ */
+
+
+.services__section_wrap {
+    display: flex;
+    flex-direction: column;
+}
+
+.services__section_name {
+    color: #1d25a4;
+    font-family: 'Montserrat bolt';
+    font-size: 30px;
+    text-align: center;
+    font-weight: 700;
+    padding-bottom: 20px;
+}
+
+
+.services__section_title {
+    color: black;
+    font-family: 'Montserrat bolt';
+    font-size: 35px;
+    /* font-weight: 700; */
+    text-align: center;
+}
+
+.services__section_top {
+    padding: 60px 0 70px 0;
+}
+
+.services__section_bottom {
+    width: 650px;
+    height: 1500px;
+    justify-content: space-between;
+    display: flex;
+    margin: 0 auto;
+    /* flex-direction: column; */
+    flex-wrap: wrap;
+    list-style: none;
+}
+
+.services__section_item {
+    height: 290px;
+    width: 250px;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: space-between; */
+    /* background: red; */
+    /* border: solid 2px black; */
+}
+
+.services__section_item_title {
+    font-family: 'Montserrat bolt';
+    font-size: 20px;
+    font-weight: 700px;
+    color: black;
+    text-align: center;
+    margin: 10px 0 20px 0;
+}
+
+.services__section_text {
+    font-family: 'Montserrat';
+    font-size: 14px;
+    font-weight: 700px;
+    color: black;
+    text-align: center;
+}
+
+.services__section_item_image {
+    width: 128px;
+    height: 128px;
+    margin: 0 auto;
+}
+
+/* #services__img_1{
+    background: url(assets/images/angel.png);
+} */
+
+.services__img_1 {
+    background: url(assets/images/free-icon-screwdriver-4257884.png);
+}
+
+.services__img_2 {
+    background: url(assets/images/free-icon-car-insurance-1518798.png);
+}
+
+.services__img_3 {
+    background: url(assets/images/free-icon-excavator-8654442.png);
+}
+
+.services__img_4 {
+    background: url(assets/images/free-icon-recycling-box-2367589.png);
+}
+
+.services__img_5 {
+    background: url(assets/images/free-icon-chop-saw-663398.png);
+}
+
+.services__img_6 {
+    background: url(assets/images/free-icon-angel-3639045.png);
+}
+
+.services__img_7 {
+    background: url(assets/images/free-icon-hotel-3086555.png);
+}
+
+.services__img_8 {
+    background: url(assets/images/free-icon-bath-3130258.png);
+}
+
+.services__img_9 {
+    background: url(assets/images/free-icon-lawn-mower-4634833.png);
+}
+
+.services__img_10 {
+    background: url(assets/images/free-icon-home-repair-2238386.png);
+}
+
+.services_section {
+    padding-bottom: 60px;
+}
+
+
+/* ______________О нас________________ */
+
+/* .about__section{
+    width: 100%;
+    height: 800px;
+    background: url(assets/images/kran.jpg);
+    background-size: 100% 800px;
+    background-attachment: fixed;
+} */
+
+.about__section_wrap {
+    display: flex;
+}
+
+.about__section_left {
+    height: 600px;
+    width: 50%;
+    /* background: red; */
+
+}
+
+.about__section_right {
+
+    height: 500px;
+    width: 50%;
+
+    /* background: purple; */
+    /* background: url(assets/images/jkh.jpg); */
+    /* background: url(assets/images/pexels-torsten.jpg); */
+    /* background: url(assets/images/provoda.jpg); */
+    /* background: url(assets/images/table.jpg); */
+    background: url(assets/images/electrysity2.jpg);
+    /* background: url(assets/images/kran.jpg); */
+    background-size: contain;
+    background-size: 100% 800px;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: 50px -25px;
+}
+
+.about__section_text {
+    width: 80%;
+    font-family: 'Montserrat';
+    font-size: 14px;
+    font-weight: 700px;
+    color: black;
+    line-height: 30px;
+}
+
+.about__section_title {
+    color: black;
+    font-family: 'Montserrat bolt';
+    font-size: 35px;
+    /* font-weight: 700; */
+    text-align: center;
+    padding: 0 0 20px 0;
+}
+
+.about__section_name {
+    color: #1d25a4;
+    font-family: 'Montserrat bolt';
+    font-size: 30px;
+    text-align: center;
+    font-weight: 700;
+    padding-bottom: 20px;
+}
+
+
+/* ____________Таблица_____________ */
+
+.about__table_body_box {
+    font-family: 'Montserrat';
+    font-size: 14px;
+    font-weight: 700px;
+    color: white;
+    padding: 10px 20px;
+    height: 60px;
+}
+
+.about__table_head_box {
+    font-family: 'Montserrat bolt';
+    font-size: 20px;
+    font-weight: 700px;
+    color: white;
+    border: solid 2px white;
+    padding: 10px 20px;
+}
+
+
+.section__table {
+    width: 100%;
+    height: 460px;
+    background: #1d25a4;
+    padding: 60px 0 0 0;
+}
+
+.about__section_table {
+    border-collapse: collapse;
+    margin: 0 auto;
+    /* border: 1px solid black; */
+}
+
+.about__table_head {
+    height: 50px;
+}
+
+.about__table_body {
+    height: 200px;
+}
+
+.about__table_body_box {
+    border: 2x solid white;
+}
+
+/* .about__table_head .about__table_head_box{
+    border: 2x solid white;
+}  */
+
+/* .about__table_head_box{
+    border: 2x solid white;
+} */
+
+.about__table_body .about__table_body_box {
+    border: 2px solid white;
+}
+
+.table_middle_text {
+    text-align: center;
+}
+
+.about__table_body_box1 {
+    width: 200px;
+
+}
+
+
+/* ЭТО ЕДИСНВЕННАЯ СЕКЦИЯ КОТРАЯ БУДЕТ РАЗЛИЧАТЬСЯ, ПО ЭТОМУ СМОТРЕТЬ ТЕБЕ В ОСНОВНОМ
+СЮДА КАК Я ДУМАЮ */
+
+
+/* __________Информационные ресурсы_____________ */
+
+.forum__button_place {
+    display: flex;
+    justify-content: center;
+}
+
+/* ВОТ ЕДИСНТВЕННОЕ ОТЛИЧИЕ ОТ АВТОРИЗИРОВАННОГО ПОЛЬЗОВАТЕЛЯ - justify-content: center; 
+Это дает возможность выставить левую часть в центре (ФОРМУ Я УБРАЛ ОНА У ВТОРИЗИРОВАННОГО ПОЛЬЗОВАТЕЛЯ*/
+
+
+.section__info_res_wrap {
+    display: flex;
+    justify-content: center;
+}
+
+.section__info_res_wrap--auth {
+    display: flex;
+    justify-content: space-between;
+}
+
+/* ВОТ ТУТ ФОРМА ВВОДА ВОПРОСА */
+
+.input_label_text {
+    color: #1d25a4;
+    font-family: 'Montserrat';
+    font-size: 14px;
+    font-weight: 700px;
+}
+
+input::placeholder {
+    color: #1d25a4;
+    font-family: 'Montserrat';
+    font-size: 14px;
+    font-weight: 700px;
+}
+
+textarea::placeholder {
+    color: #1d25a4;
+    font-family: 'Montserrat';
+    font-size: 14px;
+    font-weight: 700px;
+}
+
+.info__res_left {
+    width: 35%;
+}
+
+
+.info__res_left--auth {
+    width: 60%; /* поменял ширину с 35% */
+    margin: 0 auto;
+}
+
+.info__res_right {
+    width: 35%;
+}
+
+.top_form {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    padding-bottom: 20px;
+}
+
+.services__info_res_text {
+    width: 100%;
+    font-family: 'Montserrat';
+    font-size: 14px;
+    font-weight: 700px;
+    color: black;
+    line-height: 30px;
+}
+
+.services__info_res_title {
+    color: black;
+    font-family: 'Montserrat bolt';
+    font-size: 35px;
+    text-align: center;
+    padding: 0 0 20px 0;
+}
+
+.services__info_res_name {
+    color: #1d25a4;
+    font-family: 'Montserrat bolt';
+    font-size: 30px;
+    text-align: center;
+    font-weight: 700;
+    padding-bottom: 20px;
+}
+
+.input_styles {
+    border-bottom: 1px solid black;
+    padding: 10px 0;
+}
+
+.input_parameters_1 {
+    width: 40%;
+}
+
+.input_parameters_2 {
+    width: 100%;
+}
+
+.middle_form_1 {
+    padding-top: 0;
+}
+
+.middle_form_2 {
+    padding-top: 20px;
+}
+
+.bottom_form {
+    padding-top: 20px;
+}
+
+.input_parameters_3 {
+    width: 100%;
+}
+
+.submit_form {
+    width: 100px;
+    height: 40px;
+    border-radius: 25px;
+    background: #1d25a4;
+    font-family: 'Montserrat';
+    color: white;
+    font-size: 12px;
+}
+
+.submit_form:hover {
+    background: blue;
+    cursor: pointer;
+    transition: 0.5s;
+
+}
+
+.section__info_res {
+    padding: 30px 0 30px;
+}
+
+.submit_form_box {
+    display: flex;
+    justify-content: center;
+    padding-top: 20px;
+}
+
+/* Добавления для форума в случае выбора развертывания его на главной странице */
+
+/* ВОТ ТУТ ПОИСК */
+
+.search__form {
+    display: flex;
+    align-items: center;
+    /* justify-content: space-between; */
+}
+
+/* картинка лупы */
+.search_img {
+    width: 32px;
+    height: 32px;
+    padding-right: 15px;
+    background: url(assets/images/glass-search.png);
+    background-repeat: no-repeat;
+    margin-right: 15px;
+}
+
+/* поле для ввода */
+.search__input {
+    border-bottom: 1px solid black;
+    padding: 10px;
+    margin-right: 15px;
+    width: 400px;
+}
+
+.search__input::placeholder {
+    text-align: center;
+}
+
+/* кнопка подтверждения */
+.submit_search {
+    width: 100px;
+    height: 40px;
+    border-radius: 25px;
+    background: #1d25a4;
+    font-family: 'Montserrat';
+    color: white;
+    font-size: 12px;
+    margin-left: 10px;
+}
+
+/* ТУТ ВСЕ ВОПРОСЫ */
+
+.questions_list_wrap {
+    width: 100%;
+    list-style: none;
+    padding-top: 30px;
+}
+
+.question_title {
+    color: #1d25a4;
+    font-family: 'Montserrat bolt';
+    font-size: 16px;
+    font-weight: 700;
+    padding-bottom: 4px;
+}
+
+.question_text {
+    color: black;
+    font-family: 'Montserrat';
+    font-size: 14px;
+}
+
+.questions_list_item {
+    transition: 0.5s;
+}
+
+.questions_list_item:hover {
+    background: aliceblue;
+}
+
+/* ЧЕК БОКСЫ */
+
+.questions_type_place {
+    padding-top: 30px;
+}
+
+.first_type {
+    margin-bottom: 10px;
+}
+
+.question_bottom_form {
+    padding-top: 20px;
+    /* width: 400px; */
+}
+
+
+/* ___________________Footer________________ */
+
+
+.main__footer {
+    padding: 30px 0 30px;
+    background-color: aliceblue;
+}
+
+.main__footer_center {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.services__footer_text {
+    width: 100%;
+    font-family: 'Montserrat';
+    font-size: 14px;
+    font-weight: 700px;
+    color: black;
+    line-height: 30px;
+    text-align: center;
+}
+
+.services__footer_title {
+    color: black;
+    font-family: 'Montserrat bolt';
+    font-size: 35px;
+    text-align: center;
+    padding: 0 0 20px 0;
+}
+
+.services__footer_name {
+    color: #1d25a4;
+    font-family: 'Montserrat bolt';
+    font-size: 30px;
+    text-align: center;
+    font-weight: 700;
+    padding-bottom: 20px;
+}
+
+.logo__index {
+
+    width: 80px;
+    height: 80px;
+    background: url(assets/images/photo_2023-06-13_20-51-28.jpg);
+    background-size: 80px 80px;
+}
+
+.logo__index_wrap {
+    display: flex;
+    height: 90px;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/* _________________News__________________ */
+
+/* НОВОСТИ Я ПОКА НЕ ДОДЕЛАЛ, А ИМЕННО, НЕ ДОБАВИЛ РАБОТУ СЛАЙДЕРА ПО КНОПКАМ
+И НЕ ДОБАВИЛ НОРМАЛЬНЫЙ КОНТЕКНТ, ТАК В ЦЕЛОМ ВСЕ ГОТОВО, КАК ДОДЕЛАЮ, СКИНУ СКРИПТ
+И CSS С КАРТИНКАМИ И ТЕКСТОМ ДЛЯ КАЖДОЙ НОВОСТИ */
+
+.section__news {
+    padding-bottom: 30px;
+}
+
+
+.section__news_wrap {
+    padding: 30px 0 0 0;
+}
+
+.news__section_text {
+    width: 80%;
+    font-family: 'Montserrat';
+    font-size: 14px;
+    font-weight: 700px;
+    color: black;
+    line-height: 30px;
+}
+
+.news__section_title {
+    color: black;
+    font-family: 'Montserrat bolt';
+    font-size: 35px;
+    text-align: center;
+    padding: 0 0 20px 0;
+}
+
+.news__section_name {
+    color: #1d25a4;
+    font-family: 'Montserrat bolt';
+    font-size: 30px;
+    text-align: center;
+    font-weight: 700;
+    padding-bottom: 20px;
+}
+
+
+.news__slider {
+    width: 100%;
+    display: flex;
+    height: 270px;
+}
+
+.news__overflow {
+    display: flex;
+    width: 3550px;
+    list-style: none;
+    gap: 50px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.button__left {
+    background: none;
+}
+
+.button__right {
+    background: none;
+}
+
+
+.button__left_image {
+    width: 64px;
+    height: 64px;
+    background: url(assets/images/left-arrow64.png);
+
+}
+
+.button__right_image {
+    width: 64px;
+    height: 64px;
+    background: url(assets/images/right-arrow64.png);
+
+}
+
+.news__main_1 {
+    width: 350px;
+    height: 270px;
+    background: aliceblue;;
+    border-radius: 25px;
+}
+
+.news__image {
+    width: 350px;
+    height: 165px;
+    border-radius: 25px 25px 0 0;
+}
+
+.img_1 {
+    background-size: cover;
+    background: url(assets/images/news-1.jpg) no-repeat center;
+}
+
+.img_2 {
+    background-size: cover;
+    background: url(assets/images/news-2.jpg) no-repeat center;
+}
+
+.img_3 {
+    background-size: cover;
+    background: url(assets/images/news-3.jpg) no-repeat center;
+}
+
+.img_4 {
+    background-size: cover;
+    background: url(assets/images/news-4.jpg) no-repeat center;
+}
+
+.img_5 {
+    background: url(assets/images/news-5.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.button__left_box {
+    display: flex;
+    align-items: center;
+}
+
+.button__right_box {
+    display: flex;
+    align-items: center;
+}
+
+.news__overflow_wrap {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
+.news__bottom_item_left {
+    display: flex;
+    flex-direction: column;
+    padding-right: 20px;
+}
+
+.news__bottom_item {
+    box-sizing: border-box;
+    display: flex;
+    padding: 5px 20px;
+}
+
+.news__date_number {
+    color: #1d25a4;
+    font-family: 'Montserrat bolt';
+    font-size: 16px;
+    text-align: center;
+    font-weight: 700;
+    padding-bottom: 4px;
+}
+
+.news__date_month {
+    color: black;
+    font-family: 'Montserrat bolt';
+    font-size: 20px;
+    text-align: center;
+}
+
+.news__team {
+    color: black;
+    font-family: 'Montserrat';
+    font-size: 16px;
+    padding-bottom: 4px;
+}
+
+.news__text {
+    font-family: 'Montserrat';
+    font-size: 14px;
+    font-weight: 700px;
+    color: black;
+}
+
+/* ТУТ ЧТОБЫ НЕ ПОТЕРЯТЬ ДОБАВЛЮ СТИЛИ ИЗМЕНЕННЫХ ЭЛЕМЕНТОВ СТРАНИЦЫ НЕАВТОРИЗОВАННОГО ПОЛЬЗОВАТЕЛЯ */
+/* ВООБЩЕ ТУТ ИМЯ И ФАМИЛИЯ ПОЛЬЗОВАТЕЛЯ */
+.user_name {
+    height: 50px;
+    display: flex;
+    align-items: center;
+}
+
+.user_name_text {
+    color: #1d25a4;
+    font-family: 'Montserrat bolt';
+    font-size: 14px;
+    text-align: center;
+    font-weight: 700;
+}
+
+
+/* _____СТИЛИ ФОРУМА_____ */
+
+.section__info_res--auth {
+    padding-top: 130px;
+}
+
+.forum_left {
+    width: 90%;
+}
+
+.section__forum_off {
+    display: flex;
+    justify-content: center;
+    width: 45%;
+}
+
+/* _____СТИЛИ СТРАНИЦЫ ВОПРОСА_____ */
+
+/* .question__left{
+    width: 100%;  
+} */
+
+.section__question_right {
+    display: flex;
+    justify-content: center;
+    width: 300px;
+
+}
+
+.question__left_center {
+    width: 45%;
+    /* margin: 0 auto; */
+}
+
+.page__question_title {
+    color: black;
+    font-family: 'Montserrat bolt';
+    font-size: 30px;
+    /* text-align: center;  */
+    padding: 0 0 20px 0;
+}
+
+.page__question_name {
+    color: #1d25a4;
+    font-family: 'Montserrat bolt';
+    font-size: 30px;
+    /* text-align: center; */
+    font-weight: 700;
+    padding-bottom: 20px;
+}
+
+/* .section__info_res_wrap{
+    display: flex;
+    justify-content: center;
+    width: 45%;
+} */
+
+
+.page__question {
+    padding: 130px 0 30px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.question__right {
+    width: 80%;
+    margin: 0 auto;
+}
+
+.question__answers_list {
+    list-style: none;
+}
+
+
+.responder__name {
+    color: #1d25a4;
+    font-family: 'Montserrat bolt';
+    font-size: 16px;
+    /* text-align: center; */
+    font-weight: 700;
+    padding-bottom: 4px;
+
+}
+
+.answer__text {
+    font-family: 'Montserrat';
+    font-size: 14px;
+    font-weight: 700px;
+    color: black;
+    padding-bottom: 8px;
+
+}
+
+/*ИНФОРМАЦИОННЫЕ РЕСУРСЫ */
+
+.resourses__text_spaces {
+    margin: 40px 0 40px;
+}
+
+.resourses__bottom {
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.resourses__list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    height: 400px;
+    gap: 30px;
+    /* justify-content: space-evenly; */
+}
+
+.resourses__item {
+    font-family: 'Montserrat';
+    font-size: 14px;
+    font-weight: 700px;
+    color: black;
+    /* padding-bottom: 20px; */
+}
+
+
+/* _______FORUM PAGE ADMIN STYLES________ */
+
+
+.question__action_box {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 0 60px;
+    width: 20%;
+    margin: 0 auto;
+
+}
+
+
+.delite__question_button {
+    width: 100px;
+    height: 40px;
+    border-radius: 25px;
+    background: #1d25a4;
+    font-family: 'Montserrat';
+    color: white;
+    font-size: 12px;
+}
+
+.delite__question_button:hover {
+    background: blue;
+    cursor: pointer;
+    transition: 0.5s;
+
+}
+
+
+.marked__question_button {
+    width: 100px;
+    height: 40px;
+    border-radius: 25px;
+    background: #1d25a4;
+    font-family: 'Montserrat';
+    color: white;
+    font-size: 12px;
+}
+
+.marked__question_button:hover {
+    background: blue;
+    cursor: pointer;
+    transition: 0.5s;
+
+}
+
+
+
+
+

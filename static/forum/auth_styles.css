@@ -1,0 +1,128 @@
+@font-face {
+    font-family: 'Poppins';
+    src: url('./assets/fonts/Poppins/Poppins-Black.ttf') format('truetype');
+    /* Добавьте другие варианты шрифта, если они доступны */
+}
+
+@font-face {
+    font-family: 'Montserrat';
+    src: url('./assets/fonts/Montserrat/static/Montserrat-Regular.ttf') format('truetype');
+    /* Добавьте другие варианты шрифта, если они доступны */
+}
+
+@font-face {
+    font-family: 'Montserrat bolt';
+    src: url('./assets/fonts/Montserrat/static/Montserrat-Bold.ttf') format('truetype');
+    /* Добавьте другие варианты шрифта, если они доступны */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.auth__place {
+    width: 30%;
+    height: 30%;
+    background: aliceblue;
+    padding: 30px;
+    border-radius: 25px;
+}
+
+.auth__title {
+    color: black;
+    font-family: 'Montserrat bolt';
+    font-size: 35px;
+    text-align: center;
+    padding-bottom: 30px;
+}
+
+.username__label {
+    color: #1d25a4;
+    font-family: 'Montserrat bolt';
+    font-size: 30px;
+    /* text-align: center; */
+    font-weight: 700;
+    padding-bottom: 20px;
+}
+
+.username__input {
+    color: #1d25a4;
+    font-family: 'Montserrat bolt';
+    font-size: 14px;
+    /* text-align: center; */
+    font-weight: 700;
+    /* padding-bottom: 20px; */
+    padding: 10px 10px;
+}
+
+
+.password__label {
+    color: #1d25a4;
+    font-family: 'Montserrat bolt';
+    font-size: 30px;
+    /* text-align: center; */
+    font-weight: 700;
+    padding: 20px 0;
+}
+
+.password__input {
+    color: #1d25a4;
+    font-family: 'Montserrat bolt';
+    font-size: 14px;
+    /* text-align: center; */
+    font-weight: 700;
+    /* padding-bottom: 20px; */
+    padding: 10px 10px;
+}
+
+input::placeholder {
+    color: #1d25a4;
+    font-family: 'Montserrat';
+    font-size: 14px;
+    font-weight: 700px;
+}
+
+
+.username__input {
+    background: aliceblue;
+    border-bottom: 3px solid black;
+}
+
+.password__input {
+    background: aliceblue;
+    border-bottom: 3px solid black;
+}
+
+.auth__form {
+    display: flex;
+    flex-direction: column;
+}
+
+.auth__submit {
+    width: 120px;
+    height: 50px;
+    border-radius: 25px;
+    background: #1d25a4;
+    font-family: 'Montserrat';
+    color: white;
+    font-size: 16px;
+    margin: 20px auto;
+}
+
+.auth__submit:hover {
+    background: blue;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+    

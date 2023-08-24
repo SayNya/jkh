@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="stylesheet" type="text/css" href="{% static 'forum/styles.css' %}"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com"/>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+    <link
+            href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700;800;900&family=Oswald:wght@200;300;400;500;600&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+            rel="stylesheet"
+    />
+    <title>Document</title>
+    <script src="{% static 'forum/scripts/carusel.js' %}"></script>
+</head>
+<body>
+
+
+<main class="main__index" id="link_to_main">
+
+    <!-- +++++ HEADER ПРОКИДЫАТЬ СЮДА +++++ -->
+{% if user.is_authenticated %}
+    {% include 'forum/header_auth.html' %}
+{% else %}
+    {% include 'forum/header_not_auth.html' %}
+{% endif %}
+
+    <section class="main__section">
+        <div class="main__section_wrap container">
+            <div class="main__section_left">
+                <h1 class="main__left_title">
+                    Районное унитарное предприятие <br/>
+                    «Воложинский жилкоммунхоз»
+                </h1>
+                <p class="main__left_text">
+                    Районное унитарное предприятие «Воложинский жилкоммунхоз» является
+                    самостоятельным предприятием, осуществляет свою деятельность в
+                    рамках действующего законодательства и Устава предприятия.
+                    Учредителем является Воложинский районный исполнительный комитет.
+                </p>
+
+                <form action="#link_to_services" class="main__button_action_index">
+                    <button class="main__button">Подробнее</button>
+                </form>
+            </div>
+        </div>
+    </section>
+    <section class="services_section" id="link_to_services">
+        <div class="services__section_wrap">
+            <div class="services__section_top">
+                <h4 class="services__section_name">Услуги</h4>
+                <h2 class="services__section_title">
+                    Новые горизоны вашего комфорта
+                </h2>
+            </div>
+            <ul class="services__section_bottom">
+                <li class="services__section_item">
+                    <div class="services__section_item_image services__img_1"></div>
+                    <h4 class="services__section_item_title">Ремонтные услуги</h4>
+                    <p class="services__section_text">
+                        все виды ремонтно-строительных работ в жилищном фонде
+                        (электромонтажные, малярные, штукатурные, стекольные, печные и
+                        др.);
+                    </p>
+                </li>
+                <li class="services__section_item">
+                    <div class="services__section_item_image services__img_2"></div>
+                    <h4 class="services__section_item_title">Транспортные услуги</h4>
+                    <p class="services__section_text">
+                        услуги автотранспорта и тракторной техники для перевозки грузов
+                        и выполнения строительных работ;
+                    </p>
+                </li>
+                <li class="services__section_item">
+                    <div class="services__section_item_image services__img_3"></div>
+                    <h4 class="services__section_item_title">Землеройные работы</h4>
+                    <p class="services__section_text">
+                        выполнение землеройных работ экскаваторами;
+                    </p>
+                </li>
+                <li class="services__section_item">
+                    <div class="services__section_item_image services__img_4"></div>
+                    <h4 class="services__section_item_title">Вторичные материалы</h4>
+                    <p class="services__section_text">
+                        прием вторично-материальных ресурсов;
+                    </p>
+                </li>
+                <li class="services__section_item">
+                    <div class="services__section_item_image services__img_5"></div>
+                    <h4 class="services__section_item_title">Спиливание деревьев</h4>
+                    <p class="services__section_text">
+                        спиливание деревьев с вышки бензомоторной пилой с обрезкой
+                        дерева по частям;
+                    </p>
+                </li>
+                <li class="services__section_item">
+                    <div class="services__section_item_image services__img_6"></div>
+                    <h4 class="services__section_item_title">Ритуальные услуги</h4>
+                    <p class="services__section_text">
+                        ритуальные услуги, с оргонизацией и проведением похорон;
+                    </p>
+                </li>
+                <li class="services__section_item">
+                    <div class="services__section_item_image services__img_7"></div>
+                    <h4 class="services__section_item_title">Услуги гостиниц</h4>
+                    <p class="services__section_text">
+                        услуги гостиниц. Предоставление комфортного проживания гостей с
+                        возмостью дополнительных развлекательных услуг;
+                    </p>
+                </li>
+                <li class="services__section_item">
+                    <div class="services__section_item_image services__img_8"></div>
+                    <h4 class="services__section_item_title">Услуги бани</h4>
+                    <p class="services__section_text">
+                        предоставление банных комплексов связанных с оздоровлением,
+                        Релаксацией и уходом за телом;
+                    </p>
+                </li>
+                <li class="services__section_item">
+                    <div class="services__section_item_image services__img_9"></div>
+                    <h4 class="services__section_item_title">Скашивание травы</h4>
+                    <p class="services__section_text">
+                        скашивание травы газонокосилкой. Облагораживание територии;
+                    </p>
+                </li>
+                <li class="services__section_item">
+                    <div class="services__section_item_image services__img_10"></div>
+                    <h4 class="services__section_item_title">
+                        Строительные материалы
+                    </h4>
+                    <p class="services__section_text">
+                        отпуск нерудных строительных материалов (песок, песок сеянный,
+                        песчано-гравийная смесь, гравий в карьере в д. Поричи).
+                    </p>
+                </li>
+            </ul>
+        </div>
+    </section>
+    <section class="about__section" id="link_to_about">
+        <div class="about__section_wrap container">
+            <div class="about__section_left">
+                <h4 class="about__section_name">О нас</h4>
+                <h2 class="about__section_title">Руководство</h2>
+                <p class="about__section_text">
+                    Воложинский жилкоммунхоз — районное унитарное предприятие, которое
+                    действует в соответствии с законодательством и уставом
+                    предприятия. Оно является самостоятельной организацией и
+                    подчиняется Воложинскому районному исполнительному комитету,
+                    который выступает его учредителем.
+                </p>
+            </div>
+            <div class="about__section_right"></div>
+        </div>
+    </section>
+
+    <section class="section__table">
+        <div class="section__table_wrap container">
+            <table class="about__section_table">
+                <thead class="about__table_head">
+                <tr class="about__table_head_string">
+                    <th class="about__table_head_box">Должность</th>
+                    <th class="about__table_head_box">ФИО</th>
+                    <th class="about__table_head_box">Адрес</th>
+                    <th class="about__table_head_box">Номер телефона</th>
+                </tr>
+                </thead>
+
+                <tbody class="about__table_body">
+                <tr class="about__table_body_string">
+                    <td class="about__table_body_box">Директор</td>
+                    <td class="about__table_body_box">Унучек Михаил Михайлович</td>
+                    <td class="about__table_body_box about__table_body_box1">
+                        г.Воложин, ул.Пушкина, 55
+                    </td>
+                    <td class="about__table_body_box table_middle_text">57-9-05</td>
+                </tr>
+                <tr class="about__table_body_string">
+                    <td class="about__table_body_box">Главный инженер</td>
+                    <td class="about__table_body_box">Мисевич Олег Викторович</td>
+                    <td class="about__table_body_box about__table_body_box1">
+                        г.Воложин, ул.Пушкина, 55
+                    </td>
+                    <td class="about__table_body_box table_middle_text">56-0-00</td>
+                </tr>
+                <tr class="about__table_body_string">
+                    <td class="about__table_body_box">
+                        Заместитель директора по жилищным и <br/>
+                        коммунальным вопросам
+                    </td>
+                    <td class="about__table_body_box">
+                        Клименков Павел Вячеславович
+                    </td>
+                    <td class="about__table_body_box about__table_body_box1">
+                        г.Воложин, ул.Пушкина, 55
+                    </td>
+                    <td class="about__table_body_box table_middle_text">54-3-47</td>
+                </tr>
+                <tr class="about__table_body_string">
+                    <td class="about__table_body_box">
+                        Заместитель директора по строительству
+                    </td>
+                    <td class="about__table_body_box">Лиштван Антрей Михайлович</td>
+                    <td class="about__table_body_box about__table_body_box1">
+                        г.Воложин, ул.Пушкина, 55
+                    </td>
+                    <td class="about__table_body_box table_middle_text">57-6-27</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+    <section class="section__news" id="news_link">
+        <div class="section__news_wrap container">
+            <h4 class="news__section_name">Новости</h4>
+            <h2 class="news__section_title">Важные события</h2>
+            <div class="news__slider">
+                <div class="button__left_box">
+
+                    <button class="button__left">
+                        <div class="button__left_image"></div>
+                    </button>
+
+                </div>
+                <div class="news__overflow_wrap">
+                    <ul class="news__overflow">
+                        <li class="news__main_1">
+                            <div class="news__image img_1"></div>
+                            <div class="news__bottom_item">
+                                <div class="news__bottom_item_left">
+                                    <h4 class="news__date_number">Июнь</h4>
+                                    <h2 class="news__date_month">27</h2>
+                                </div>
+                                <div class="news__bottom_item_right">
+                                    <h4 class="news__team">Островок здоровья</h4>
+                                    <p class="news__text">Сегодня погода дождливая, но в спортивно-оздоровительном
+                                        лагере «Островок здоровья»...</p>
+                                </div>
+                            </div>
+                        </li>
+
+                        <li class="news__main_1">
+                            <div class="news__image img_2"></div>
+                            <div class="news__bottom_item">
+                                <div class="news__bottom_item_left">
+                                    <h4 class="news__date_number">Июнь</h4>
+                                    <h2 class="news__date_month">27</h2>
+                                </div>
+                                <div class="news__bottom_item_right">
+                                    <h4 class="news__team">I класс пожарной опасности</h4>
+                                    <p class="news__text">I и II классы пожарной опасности - разрешение посещения лесов
+                                        III класс пожарной опасности...</p>
+                                </div>
+                            </div>
+                        </li>
+
+                        <li class="news__main_1">
+                            <div class="news__image img_3">
+                            </div>
+                            <div class="news__bottom_item">
+                                <div class="news__bottom_item_left">
+                                    <h4 class="news__date_number">Июнь</h4>
+                                    <h2 class="news__date_month">27</h2>
+                                </div>
+                                <div class="news__bottom_item_right">
+                                    <h4 class="news__team">Сувязь пакаленняў</h4>
+                                    <p class="news__text">Вось і прыйшла доўгачаканая летняя пара. Наперадзе ў
+                                        выхаванцаў дзіцячых садкоў шмат забаў...</p>
+                                </div>
+                            </div>
+                        </li>
+
+                        <li class="news__main_1">
+                            <div class="news__image img_4">
+                            </div>
+                            <div class="news__bottom_item">
+                                <div class="news__bottom_item_left">
+                                    <h4 class="news__date_number">Июнь</h4>
+                                    <h2 class="news__date_month">27</h2>
+                                </div>
+                                <div class="news__bottom_item_right">
+                                    <h4 class="news__team">Сувязь пакаленняў</h4>
+                                    <p class="news__text">Вось і прыйшла доўгачаканая летняя пара. Наперадзе ў
+                                        выхаванцаў дзіцячых садкоў шмат забаў...</p>
+                                </div>
+                            </div>
+                        </li>
+
+                        <li class="news__main_1">
+                            <div class="news__image img_4">
+                            </div>
+                            <div class="news__bottom_item">
+                                <div class="news__bottom_item_left">
+                                    <h4 class="news__date_number">Июнь</h4>
+                                    <h2 class="news__date_month">27</h2>
+                                </div>
+                                <div class="news__bottom_item_right">
+                                    <h4 class="news__team">Новенькие авто</h4>
+                                    <p class="news__text">Geely Emgrand прямиком из салона прибыли в Воложин...</p>
+                                </div>
+                            </div>
+                        </li>
+
+                        <li class="news__main_1">
+                            <div class="news__image img_1"></div>
+                            <div class="news__bottom_item">
+                                <div class="news__bottom_item_left">
+                                    <h4 class="news__date_number">Июнь</h4>
+                                    <h2 class="news__date_month">27</h2>
+                                </div>
+                                <div class="news__bottom_item_right">
+                                    <h4 class="news__team">Островок здоровья</h4>
+                                    <p class="news__text">Сегодня погода дождливая, но в спортивно-оздоровительном
+                                        лагере «Островок здоровья»...</p>
+                                </div>
+                            </div>
+                        </li>
+
+                        <li class="news__main_1">
+                            <div class="news__image img_2"></div>
+                            <div class="news__bottom_item">
+                                <div class="news__bottom_item_left">
+                                    <h4 class="news__date_number">Июнь</h4>
+                                    <h2 class="news__date_month">27</h2>
+                                </div>
+                                <div class="news__bottom_item_right">
+                                    <h4 class="news__team">I класс пожарной опасности</h4>
+                                    <p class="news__text">I и II классы пожарной опасности - разрешение посещения лесов
+                                        III класс пожарной опасности...</p>
+                                </div>
+                            </div>
+                        </li>
+
+                        <li class="news__main_1">
+                            <div class="news__image img_3">
+                            </div>
+                            <div class="news__bottom_item">
+                                <div class="news__bottom_item_left">
+                                    <h4 class="news__date_number">Июнь</h4>
+                                    <h2 class="news__date_month">27</h2>
+                                </div>
+                                <div class="news__bottom_item_right">
+                                    <h4 class="news__team">Сувязь пакаленняў</h4>
+                                    <p class="news__text">Вось і прыйшла доўгачаканая летняя пара. Наперадзе ў
+                                        выхаванцаў дзіцячых садкоў шмат забаў...</p>
+                                </div>
+                            </div>
+                        </li>
+
+                        <li class="news__main_1">
+                            <div class="news__image img_4">
+                            </div>
+                            <div class="news__bottom_item">
+                                <div class="news__bottom_item_left">
+                                    <h4 class="news__date_number">Июнь</h4>
+                                    <h2 class="news__date_month">27</h2>
+                                </div>
+                                <div class="news__bottom_item_right">
+                                    <h4 class="news__team">Сувязь пакаленняў</h4>
+                                    <p class="news__text">Вось і прыйшла доўгачаканая летняя пара. Наперадзе ў
+                                        выхаванцаў дзіцячых садкоў шмат забаў...</p>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="button__right_box">
+                    <button class="button__right">
+                        <div class="button__right_image"></div>
+                    </button>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section class="resources" id="resources">
+        <div class="resources__wrapper">
+            <h4 class="news__section_name resourses__text_spaces">Информационные ресурсы</h4>
+            <div class="resourses__bottom container">
+                <ul class="resourses__list">
+                    <li class="resourses__item">
+                        <a href="https://president.gov.by/ru">
+                            Официальный интернет-портал Президента Республики Беларусь
+                        </a>
+                    </li>
+                    <li class="resourses__item">
+                        <a href="http://www.minsk-region.gov.by/">
+                            Минский областной исполнительный комитет
+                        </a>
+                    </li>
+                    <li class="resourses__item">
+                        <a href="http://www.belstat.gov.by/">
+                            Национальный статистический комитет
+                        </a>
+                    </li>
+                    <li class="resourses__item">
+                        <a href="https://pravo.by/">
+                            Национальный правовой Интернет-портал Республики Беларусь
+                        </a>
+                    </li>
+                    <li class="resourses__item">
+                        <a href="https://president.gov.by/ru">
+                            Каталог интернет-ресурсов государственных органов
+                        </a>
+                    </li>
+                    <li class="resourses__item">
+                        <a href="https://www.beltelecom.by/">
+                            Официальный интернет-сайт РУП «Белтелеком»
+                        </a>
+                    </li>
+                    <li class="resourses__item">
+                        <a href="https://nces.by/">
+                            Национальный центр электронных услуг
+                        </a>
+                    </li>
+                </ul>
+                <ul class="resourses__list">
+                    <li class="resourses__item">
+                        <a href="https://portal.gov.by/PortalGovBy/faces/wcnav_defaultSelection?_afrLoop=253788156790773&_afrWindowMode=0&_afrWindowId=null#%40%3F_afrWindowId%3Dnull%26_afrLoop%3D253788156790773%26_afrWindowMode%3D0%26_adf.ctrl-state%3Dcew6aecjs_4">
+                            Единый портал электронных услуг Общегосударственной автоматизированной
+                        </a>
+                    </li>
+
+                    <li class="resourses__item">
+                        <a href="https://president.gov.by/ru/gosudarstvo/simvolika">
+                            Символика Республики Беларусь
+                        </a>
+                    </li>
+                    <li class="resourses__item">
+                        <a href="http://www.sovrep.gov.by/ru/">
+                            Совет Республики Национального собрания Республики Беларусь
+                        </a>
+                    </li>
+
+                    <li class="resourses__item">
+                        <a href="http://brsm.by/ru">
+                            Интернет-портал «Молодежь Беларуси»
+                        </a>
+                    </li>
+                    <li class="resourses__item">
+                        <a href="https://ncpi.gov.by/">
+                            Национальный центр правовой информации
+                        </a>
+                    </li>
+
+                    <li class="resourses__item">
+                        <a href="http://xn----7sbgfh2alwzdhpc0c.xn--90ais/">
+                            Портал рейтинговой оценки качества оказания услуг организациями Республики Беларусь
+                        </a>
+                    </li>
+
+                    <li class="resourses__item">
+                        <a href="http://www.kultura.by/konkursy/minkultury-obyavilo-konkurs-na-luchshiy-proekt-patrioticheskoy-tematiki/">
+                            Минкультуры объявило конкурс на лучший проект патриотической тематики
+                        </a>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+
+    </section>
+
+    <!-- +++++ ПРОКИДЫВАТЬ ФОРУМ СЮДА +++++ -->
+    {% if user.is_authenticated %}
+        <section class="section__info_res" id="info_res_link">
+            <div class="section__forum_off container">
+                <div class="forum_left">
+                    <h4 class="services__info_res_name">Форум</h4>
+                    <h2 class="services__info_res_title">
+                        Ищите ответы на вопросы, и отвечайте другим
+                    </h2>
+                    <p class="services__info_res_text">
+                        Форум - место где любой зарегестрированный пользователь может
+                        задать тревожущий его вопрос, а также ответить на вопросы других
+                        пользователь если сам уже знает на него ответ
+                    </p>
+                    <form action="" class="header__button_action_index forum__button_place">
+                        <!-- РАЗЛИЧИЕ ТОЛЬКО В ЭТОЙ КНОПКЕ (различие forum_off_1 и 2) -->
+                        <button class="header__button">Перейти</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    {% else %}
+        <section class="section__info_res" id="info_res_link">
+            <div class="section__forum_off container">
+                <div class="forum_left">
+                    <h4 class="services__info_res_name">Форум</h4>
+                    <h2 class="services__info_res_title">
+                        Ищите ответы на вопросы, и отвечайте другим
+                    </h2>
+                    <p class="services__info_res_text">
+                        Форум - место где любой зарегистрированный пользователь может
+                        задать тревожащий его вопрос, а также ответить на вопросы других
+                        пользователь если сам уже знает на него ответ
+                    </p>
+                    <form action="" class="header__button_action_index forum__button_place">
+                        <!-- РАЗЛИЧИЕ ТОЛЬКО В ЭТОЙ КНОПКЕ (различие forum_off_1 и 2) -->
+                        <button class="header__button">Авторизация</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    {% endif %}
+</main>
+{% include 'forum/footer.html' %}
+</body>
+</html>
