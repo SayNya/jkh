@@ -6,168 +6,95 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="{% static 'forum/styles.css' %}"/>
     <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700;800;900&family=Oswald:wght@200;300;400;500;600&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-        rel="stylesheet" />
+            href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700;800;900&family=Oswald:wght@200;300;400;500;600&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+            rel="stylesheet"/>
     <title>Document</title>
 </head>
 
 <body>
 
-    {% include 'forum/header_auth.html' %}
+{% include 'forum/header_auth.html' %}
 
-    <section class="section__info_res section__info_res--auth" id="info_res_link">
+<section class="section__info_res section__info_res--auth" id="info_res_link">
 
-        <div class="info__res_left info__res_left--auth">
-            <h4 class="services__info_res_name">Форум</h4>
-            <h2 class="services__info_res_title">
-                Ищите ответы на вопросы, и отвечайте другим
-            </h2>
+    <div class="info__res_left info__res_left--auth">
+        <h4 class="services__info_res_name">Форум</h4>
+        <h2 class="services__info_res_title">
+            Ищите ответы на вопросы, и отвечайте другим
+        </h2>
 
-        </div>
+    </div>
 
-        <div class="section__info_res_wrap container section__info_res_wrap--auth">
-            <!-- тут я добавил все для авторизованного пользователя -->
-            <div class="info__res_for_auth">
+    <div class="section__info_res_wrap container section__info_res_wrap--auth">
+        <!-- тут я добавил все для авторизованного пользователя -->
+        <div class="info__res_for_auth">
 
-                <!-- ПОИСК -->
-                <div class="search">
-                    <form action="#" class="search__form">
-                        <div class="search_img"></div>
-                        <input class="search__input" id="search__input" type="text" placeholder="Введите ваш вопрос" />
-                        <button type="submit" class="submit_search">Отправить</button>
-                    </form>
-
-                </div>
-
-                <!-- СПИСОК ВОПРОСОВ -->
-                <div class="questions_list">
-                    <ul class="questions_list_wrap ">
-                        <li class="questions_list_item">
-                            <a href="#" class="questions_list_link">
-                                <h2 class="question_title">Откуда он появился?</h2>
-                                <p class="question_text">Многие думают, что Lorem Ipsum - взятый с потолка
-                                    псевдо-латинский набор
-                                    слов...</p>
-                            </a>
-                        </li>
-                        <li class="questions_list_item">
-                            <a href="#" class="questions_list_link">
-                                <h2 class="question_title">Что такое Lorem Ipsum?</h2>
-                                <p class="question_text">Lorem Ipsum - это текст-"рыба", часто используемый в печати и
-                                    вэб-дизайне...
-                                </p>
-                            </a>
-                        </li>
-                        <li class="questions_list_item">
-                            <a href="#" class="questions_list_link">
-                                <h2 class="question_title">Почему он используется?</h2>
-                                <p class="question_text">Давно выяснено, что при оценке дизайна и композиции читаемый
-                                    текст мешает...
-                                </p>
-                            </a>
-                        </li>
-                        <li class="questions_list_item">
-                            <a href="" class="questions_list_link">
-                                <h2 class="question_title">Почему он используется?</h2>
-                                <p class="question_text">Давно выяснено, что при оценке дизайна и композиции читаемый
-                                    текст мешает...
-                                </p>
-                            </a>
-                        </li>
-                        <li class="questions_list_item">
-                            <a href="" class="questions_list_link">
-                                <h2 class="question_title">Почему он используется?</h2>
-                                <p class="question_text">Давно выяснено, что при оценке дизайна и композиции читаемый
-                                    текст мешает...
-                                </p>
-                            </a>
-                        </li>
-                        <li class="questions_list_item">
-                            <a href="#" class="questions_list_link">
-                                <h2 class="question_title">Откуда он появился?</h2>
-                                <p class="question_text">Многие думают, что Lorem Ipsum - взятый с потолка
-                                    псевдо-латинский набор
-                                    слов...</p>
-                            </a>
-                        </li>
-                        <li class="questions_list_item">
-                            <a href="#" class="questions_list_link">
-                                <h2 class="question_title">Что такое Lorem Ipsum?</h2>
-                                <p class="question_text">Lorem Ipsum - это текст-"рыба", часто используемый в печати и
-                                    вэб-дизайне...
-                                </p>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-
-                <!-- ТУТ КНОПКИ ВЫБОРА (ЧЕК БОКСЫ) -->
-                <form action="" class="questions_type_place">
-                    <div class="first_type">
-                        <input type="radio" name="myRadio" class="first_type_checkbox" id="radio1" checked>
-                        <label for="radio1" class="question_text">Только вопросы без ответа</label>
-                    </div>
-                    <div class="second_type">
-                        <input type="radio" name="myRadio" class="second_type_checkbox" id="radio2">
-                        <label for="radio1" class="question_text">Все вопросы</label>
-                    </div>
+            <!-- ПОИСК -->
+            <div class="search">
+                <form method="get" action="{% url 'forum' %}" class="search__form">
+                    <div class="search_img"></div>
+                    <input value="{{ query }}" class="search__input" name="q" id="search__input" type="text" placeholder="Введите ваш вопрос"/>
+                    <button type="submit" class="submit_search">Отправить</button>
                 </form>
 
             </div>
-            <div class="info__res_right">
-                <form action="#" class="info_res_right_form">
-                    <!-- <div class="top_form">
-                        <div>
-                            <label class="input_label_text" htmlFor="input_firstname">Имя</label>
-                            <div class="input_parameters_1">
-                                <input class="input_styles " id="input_firstname" type="text"
-                                    placeholder="Введите ваше имя" />
-                            </div>
-                        </div>
-                        <div>
-                            <label class="input_label_text" htmlFor="input_secondname">Фамилия</label>
-                            <div class="input_parameters_1">
-                                <input class="input_styles " id="input_secondname" type="text"
-                                    placeholder="Введите вашу фамилию" />
-                            </div>
-                        </div>
-                    </div>
 
-                    <div class="middle_form_1">
-                        <label class="input_label_text" htmlFor="input_gmail">Эл. Почта*</label>
-                        <div class="input_parameters_2">
-                            <input class="input_styles input_parameters_2" id="input_gmail" type="email"
-                                placeholder="Введите вашу почту" />
-                        </div>
-
-                    </div> -->
-
-                    <div class="middle_form_2">
-                        <label class="input_label_text" htmlFor="input_title">Тема сообщения</label>
-                        <div class="input_parameters_2">
-                            <input class="input_styles input_parameters_2" id="input_title" type="text"
-                                placeholder="Введите оглавление вопроса" />
-                        </div>
-
-                    </div>
-
-                    <div class="bottom_form">
-                        <label class="input_label_text" htmlFor="input_message">Вопрос</label>
-                        <div>
-                            <textarea class="input_styles input_parameters_3" id="input_message" type="email"
-                                placeholder="Введите вопрос" rows="5"></textarea>
-                        </div>
-                    </div>
-
-                    <div class="submit_form_box">
-                        <button type="submit" class="submit_form">Задать вопрос</button>
-                    </div>
-
-                </form>
+            <!-- СПИСОК ВОПРОСОВ -->
+            <div class="questions_list">
+                <ul class="questions_list_wrap ">
+                    {% for question in questions %}
+                        <li class="questions_list_item">
+                            <a href="{% url 'question' question.id %}" class="questions_list_link">
+                                <h2 class="question_title">{{ question.title }}</h2>
+                                <p class="question_text">{{ question.text|truncatechars:20 }}</p>
+                            </a>
+                        </li>
+                    {% endfor %}
+                </ul>
             </div>
-        </div>
-    </section>
 
-    {% include 'forum/footer.html' %}
+            <!-- ТУТ КНОПКИ ВЫБОРА (ЧЕК БОКСЫ) -->
+            <form action="" class="questions_type_place">
+                <div class="first_type">
+                    <input type="radio" name="myRadio" class="first_type_checkbox" id="radio1" checked>
+                    <label for="radio1" class="question_text">Только вопросы без ответа</label>
+                </div>
+                <div class="second_type">
+                    <input type="radio" name="myRadio" class="second_type_checkbox" id="radio2">
+                    <label for="radio1" class="question_text">Все вопросы</label>
+                </div>
+            </form>
+
+        </div>
+        <div class="info__res_right">
+            <form method="post" action="{% url 'create_question' %}" class="info_res_right_form">
+                {% csrf_token %}
+                <div class="middle_form_2">
+                    <label class="input_label_text" htmlFor="input_title">Тема сообщения</label>
+                    <div class="input_parameters_2">
+                        <input name="title" class="input_styles input_parameters_2" id="input_title" type="text"
+                               placeholder="Введите оглавление вопроса"/>
+                    </div>
+
+                </div>
+
+                <div class="bottom_form">
+                    <label class="input_label_text" htmlFor="input_message">Вопрос</label>
+                    <div>
+                            <textarea name="text" class="input_styles input_parameters_3" id="input_message"
+                                      placeholder="Введите вопрос" rows="5"></textarea>
+                    </div>
+                </div>
+
+                <div class="submit_form_box">
+                    <button type="submit" class="submit_form">Задать вопрос</button>
+                </div>
+
+            </form>
+        </div>
+    </div>
+</section>
+
+{% include 'forum/footer.html' %}
 </body>
 </html>

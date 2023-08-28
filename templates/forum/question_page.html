@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{% static 'forum/styles.css' %}"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com"/>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+    <link
+            href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700;800;900&family=Oswald:wght@200;300;400;500;600&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+            rel="stylesheet"/>
+    ,
+    <title>Question</title>
+</head>
+
+<body>
+{% include 'forum/header_auth.html' %}
+<section class="page__question container" id="info_res_link">
+    <div class="question__left_center">
+        <!-- ЗДЕСЬ НАХОДИТСЯ ВОПРОС -->
+        <div class="question__left">
+            <!-- ТАЙТЛ ВОПРОСА -->
+            <h4 class="page__question_name">{{ question.title }}</h4>
+            <!-- САМ ВОПРОС -->
+            <h2 class="page__question_title">
+                {{ question.text }}
+            </h2>
+        </div>
+
+        <!-- ОТВЕТЫ НА ВОПРОС -->
+        <ul class="question__answers_list">
+            <!-- СПИСОК ИЗ ОТВЕТОВ -->
+            {% for comment in comments %}
+                <li class="answer">
+                    <h3 class="responder__name">{{ comment.user.first_name }} {{ comment.user.last_name }}</h3>
+                    <p class="answer__text">{{ comment.text }}</p>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+
+
+    <div class="section__question_right">
+        <div class="question__right">
+            <form method="post" action="{% url 'create_comment' question.id %}" class="info_res_right_form">
+                {% csrf_token %}
+                <div class="question_bottom_form">
+                    <label class="input_label_text" htmlFor="input_message">Добавить свой ответ</label>
+                    <div>
+              <textarea name="text" class="input_styles input_parameters_3" id="input_message"
+                        placeholder="Введите ответ" rows="5"></textarea>
+                    </div>
+                </div>
+
+                <div class="submit_form_box">
+                    <button type="submit" class="submit_form">Добавить ответ</button>
+                </div>
+
+            </form>
+        </div>
+    </div>
+</section>
+{% if request.user.is_staff %}
+    <div class="question__action_box">
+    <form method="post" action="{% url 'remove_question' question.id %}">
+        {% csrf_token %}
+         <button type="submit" class="delite__question_button">Удалить вопрос</button>
+    </form>
+
+    <form method="post" action="{% url 'answer_question' question.id %}">
+        {% csrf_token %}
+        <button type="submit" class="marked__question_button">Пометить как отвеченный</button>
+    </form>
+    </div>
+{% endif %}
+{% include 'forum/footer.html' %}
+</body>
+</html>
