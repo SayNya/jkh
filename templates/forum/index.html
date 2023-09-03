@@ -21,11 +21,11 @@
 <main class="main__index" id="link_to_main">
 
     <!-- +++++ HEADER ПРОКИДЫАТЬ СЮДА +++++ -->
-{% if user.is_authenticated %}
-    {% include 'forum/header_auth.html' %}
-{% else %}
-    {% include 'forum/header_not_auth.html' %}
-{% endif %}
+    {% if user.is_authenticated %}
+        {% include 'forum/header_auth.html' %}
+    {% else %}
+        {% include 'forum/header_not_auth.html' %}
+    {% endif %}
 
     <section class="main__section">
         <div class="main__section_wrap container">
@@ -465,47 +465,34 @@
     </section>
 
     <!-- +++++ ПРОКИДЫВАТЬ ФОРУМ СЮДА +++++ -->
-    {% if user.is_authenticated %}
-        <section class="section__info_res" id="info_res_link">
-            <div class="section__forum_off container">
-                <div class="forum_left">
-                    <h4 class="services__info_res_name">Форум</h4>
-                    <h2 class="services__info_res_title">
-                        Ищите ответы на вопросы, и отвечайте другим
-                    </h2>
-                    <p class="services__info_res_text">
-                        Форум - место где любой зарегестрированный пользователь может
-                        задать тревожущий его вопрос, а также ответить на вопросы других
-                        пользователь если сам уже знает на него ответ
-                    </p>
-                    <form action="" class="header__button_action_index forum__button_place">
+    <section class="section__info_res" id="info_res_link">
+        <div class="section__forum_off container">
+            <div class="forum_left">
+                <h4 class="services__info_res_name">Форум</h4>
+                <h2 class="services__info_res_title">
+                    Ищите ответы на вопросы, и отвечайте другим
+                </h2>
+                <p class="services__info_res_text">
+                    Форум - место где любой зарегестрированный пользователь может
+                    задать тревожущий его вопрос, а также ответить на вопросы других
+                    пользователь если сам уже знает на него ответ
+                </p>
+                {% if user.is_authenticated %}
+                    <form action="{% url 'forum' %}" class="header__button_action_index forum__button_place">
                         <!-- РАЗЛИЧИЕ ТОЛЬКО В ЭТОЙ КНОПКЕ (различие forum_off_1 и 2) -->
                         <button class="header__button">Перейти</button>
                     </form>
-                </div>
-            </div>
-        </section>
-    {% else %}
-        <section class="section__info_res" id="info_res_link">
-            <div class="section__forum_off container">
-                <div class="forum_left">
-                    <h4 class="services__info_res_name">Форум</h4>
-                    <h2 class="services__info_res_title">
-                        Ищите ответы на вопросы, и отвечайте другим
-                    </h2>
-                    <p class="services__info_res_text">
-                        Форум - место где любой зарегистрированный пользователь может
-                        задать тревожащий его вопрос, а также ответить на вопросы других
-                        пользователь если сам уже знает на него ответ
-                    </p>
-                    <form action="" class="header__button_action_index forum__button_place">
+
+                {% else %}
+                    <form action="{% url 'login' %}" class="header__button_action_index forum__button_place">
                         <!-- РАЗЛИЧИЕ ТОЛЬКО В ЭТОЙ КНОПКЕ (различие forum_off_1 и 2) -->
                         <button class="header__button">Авторизация</button>
                     </form>
-                </div>
+                {% endif %}
             </div>
-        </section>
-    {% endif %}
+        </div>
+    </section>
+
 </main>
 {% include 'forum/footer.html' %}
 </body>
