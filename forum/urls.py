@@ -12,4 +12,5 @@ urlpatterns = [
     path("forum/create_question", views.create_question, name="create_question"),
     path("login/", views.login_request, name="login"),
     path("logout/", views.logout_request, name="logout"),
+    path("reset_password/", views.change_password, name="reset_password"),
 ]
