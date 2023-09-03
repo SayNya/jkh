@@ -29,11 +29,31 @@
         <!-- тут я добавил все для авторизованного пользователя -->
         <div class="info__res_for_auth">
 
-            <!-- ПОИСК -->
+
             <div class="search">
                 <form method="get" action="{% url 'forum' %}" class="search__form">
                     <div class="search_img"></div>
-                    <input value="{{ query }}" class="search__input" name="q" id="search__input" type="text" placeholder="Введите ваш вопрос"/>
+                    {% if query %}
+                        <input value="{{ query }}" name="q" class="search__input" id="search__input" type="text"
+                               placeholder="Введите ваш вопрос"/>
+                    {% else %}
+                        <input name="q" class="search__input" id="search__input" type="text"
+                               placeholder="Введите ваш вопрос"/>
+                    {% endif %}
+                    <!--ТЕПЕРЬ ТУТ КНОПКИ ВЫБОРА (ЧЕК БОКСЫ) -->
+                    <div>
+                        <div class="first_type">
+                            <input value="all" type="radio" name="f" class="second_type_checkbox" id="radio2" checked>
+                            <label for="radio1" class="question_text">Все вопросы</label>
+                        </div>
+                        <div class="second_type">
+                            <input value="answered" type="radio" name="f" class="first_type_checkbox" id="radio1">
+                            <label for="radio1" class="question_text">Только вопросы без ответа</label>
+                        </div>
+
+                    </div>
+
+
                     <button type="submit" class="submit_search">Отправить</button>
                 </form>
 
@@ -49,22 +69,11 @@
                                 <p class="question_text">{{ question.text|truncatechars:20 }}</p>
                             </a>
                         </li>
+                    {% empty %}
+                        <h4 class="services__info_res_name services__info_res_name--position">Вопросов пока нет</h4>
                     {% endfor %}
                 </ul>
             </div>
-
-            <!-- ТУТ КНОПКИ ВЫБОРА (ЧЕК БОКСЫ) -->
-            <form action="" class="questions_type_place">
-                <div class="first_type">
-                    <input type="radio" name="myRadio" class="first_type_checkbox" id="radio1" checked>
-                    <label for="radio1" class="question_text">Только вопросы без ответа</label>
-                </div>
-                <div class="second_type">
-                    <input type="radio" name="myRadio" class="second_type_checkbox" id="radio2">
-                    <label for="radio1" class="question_text">Все вопросы</label>
-                </div>
-            </form>
-
         </div>
         <div class="info__res_right">
             <form method="post" action="{% url 'create_question' %}" class="info_res_right_form">

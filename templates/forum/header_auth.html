@@ -43,7 +43,7 @@
             </div>
             <!-- КНОПКА ВЫХОДА + КНОПКА СМЕНЫ ПАРОЛЯ-->
             <button onclick="location.href={% url 'logout' %}" type="button" class="header__button">Выход</button>
-            <button class="header__button">Сменить Пароль</button>
+            <button onclick="location.href={% url 'reset_password' %}" class="header__button">Сменить Пароль</button>
         </div>
     </header>
 </section>
