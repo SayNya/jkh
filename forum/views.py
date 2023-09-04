@@ -2,7 +2,7 @@ from django.contrib import messages
 from django.contrib.auth import authenticate, login, logout, update_session_auth_hash
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.forms import AuthenticationForm, PasswordChangeForm
-from django.db.models import Q
+from django.db.models import Q, Count
 from django.shortcuts import render, redirect, get_object_or_404
 
 from forum.forms import QuestionForm, CommentForm
@@ -15,14 +15,25 @@ def index(request):
 
 @login_required()
 def forum_view(request):
-    if query := request.GET.get('q'):
-        questions = Question.objects.filter(Q(title__icontains=query) | Q(text__icontains=query))
-    else:
-        questions = Question.objects.all()
+    if request.method == 'POST':
+        form = QuestionForm(data=request.POST)
+        if form.is_valid():
+            obj = form.save()
+            return redirect("question", question_id=obj.id)
+        return render(request, 'forum/forum.html', {'form': form})
 
+    questions = Question.objects.annotate(num_comments=Count('comments'))
+    if query := request.GET.get('q'):
+        questions = questions.filter((Q(title__icontains=query) | Q(text__icontains=query)))
+    if ftr := request.GET.get('f') == 'nansw':
+        questions = questions.filter(num_comments=0)
+
+    form = QuestionForm()
     context = {
         'questions': questions,
-        'query': query
+        'form': form,
+        'query': query,
+        'filter': ftr
     }
     return render(request, 'forum/forum.html', context=context)
 
@@ -33,18 +44,21 @@ def question_view(request, question_id):
     comments = Comment.objects.filter(question=question)
     context = {
         'question': question,
-        'comments': comments
+        'comments': comments,
     }
-    return render(request, 'forum/question_page.html', context=context)
 
-
-@login_required()
-def create_question(request):
-    if request.method == "POST":
-        form = QuestionForm(data=request.POST)
+    if request.method == 'POST':
+        question = Question.objects.get(id=question_id)
+        data = request.POST.copy()
+        data["user"] = request.user
+        data["question"] = question
+        form = CommentForm(data=data)
         if form.is_valid():
-            obj = form.save()
-            return redirect("question", question_id=obj.id)
+            form.save()
+        context['form'] = form
+
+    context['form'] = CommentForm()
+    return render(request, 'forum/question_page.html', context=context)
 
 
 @login_required()
@@ -61,20 +75,6 @@ def answer_question(request, question_id):
     return redirect("question", question_id=qst.id)
 
 
-@login_required()
-def create_comment(request, question_id):
-    if request.method == "POST":
-        question = Question.objects.get(id=question_id)
-        temp_dict = request.POST.copy()
-        temp_dict["user"] = request.user
-        temp_dict["question"] = question
-        request.POST = temp_dict
-        form = CommentForm(data=request.POST)
-        if form.is_valid():
-            form.save()
-            return redirect("question", question_id=question.id)
-
-
 def login_request(request):
     if request.user.is_authenticated:
         return redirect("index")
@@ -88,10 +88,7 @@ def login_request(request):
                 login(request, user)
                 messages.info(request, f"You are now logged in as {username}.")
                 return redirect("index")
-            else:
-                messages.error(request, "Invalid username or password.")
-        else:
-            messages.error(request, "Invalid username or password.")
+        return render(request=request, template_name="forum/auth/login.html", context={"login_form": form})
     form = AuthenticationForm()
     return render(request=request, template_name="forum/auth/login.html", context={"login_form": form})
 
@@ -112,10 +109,7 @@ def change_password(request):
             update_session_auth_hash(request, form.user)
             messages.success(request, "Password changed.")
             return redirect("index")
-        print(form.errors)
-    else:
-        form = PasswordChangeForm(request.user)
-    data = {
-        'form': form
-    }
-    return render(request, "forum/auth/pass_change.html", data)
+        return render(request, "forum/auth/pass_change.html", {'form': form})
+
+    form = PasswordChangeForm(request.user)
+    return render(request, "forum/auth/pass_change.html", {'form': form})

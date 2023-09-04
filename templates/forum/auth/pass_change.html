@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 {% load static %}
+{% load widget_tweaks %}
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -19,13 +20,16 @@
         <form method="post" action="{% url 'reset_password' %}" class="auth__form" novalidate>
             {% csrf_token %}
             <label class="username__label" for="old_password">Введите старый пароль:</label>
-            <input class="username__input" type="password" id="old_password" name="old_password">
+            {% render_field form.old_password type="password" class="username__input" %}
+            {{ form.old_password.errors }}
 
             <label class="password__label" for="new_password1">Новый пароль:</label>
-            <input class="password__input" type="password" id="new_password1" name="new_password1">
+            {% render_field form.new_password1 type="password" class="password__input" %}
+            {{ form.new_password1.errors }}
 
             <label class="password__label" for="new_password2">Подтвердите новый пароль:</label>
-            <input class="password__input" type="password" id="new_password2" name="new_password2">
+            {% render_field form.new_password2 type="password" class="password__input" %}
+            {{ form.new_password2.errors }}
 
             <button class="auth__submit" type="submit">Войти</button>
             {% if form.errors %}

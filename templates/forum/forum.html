@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 {% load static %}
+{% load widget_tweaks %}
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -42,15 +43,27 @@
                     {% endif %}
                     <!--ТЕПЕРЬ ТУТ КНОПКИ ВЫБОРА (ЧЕК БОКСЫ) -->
                     <div>
-                        <div class="first_type">
-                            <input value="all" type="radio" name="f" class="second_type_checkbox" id="radio2" checked>
-                            <label for="radio1" class="question_text">Все вопросы</label>
-                        </div>
-                        <div class="second_type">
-                            <input value="answered" type="radio" name="f" class="first_type_checkbox" id="radio1">
-                            <label for="radio1" class="question_text">Только вопросы без ответа</label>
-                        </div>
-
+                        {% if not filter %}
+                            <div class="first_type">
+                                <input value="all" type="radio" name="f" class="second_type_checkbox" id="radio2"
+                                       checked>
+                                <label for="radio2" class="question_text">Все вопросы</label>
+                            </div>
+                            <div class="second_type">
+                                <input value="nansw" type="radio" name="f" class="first_type_checkbox" id="radio1">
+                                <label for="radio1" class="question_text">Только вопросы без ответа</label>
+                            </div>
+                        {% else %}
+                            <div class="first_type">
+                                <input value="all" type="radio" name="f" class="second_type_checkbox" id="radio2">
+                                <label for="radio2" class="question_text">Все вопросы</label>
+                            </div>
+                            <div class="second_type">
+                                <input value="nansw" type="radio" name="f" class="first_type_checkbox" id="radio1"
+                                       checked>
+                                <label for="radio1" class="question_text">Только вопросы без ответа</label>
+                            </div>
+                        {% endif %}
                     </div>
 
 
@@ -76,22 +89,22 @@
             </div>
         </div>
         <div class="info__res_right">
-            <form method="post" action="{% url 'create_question' %}" class="info_res_right_form">
+            <form method="post" action="{% url 'forum' %}" class="info_res_right_form">
                 {% csrf_token %}
                 <div class="middle_form_2">
-                    <label class="input_label_text" htmlFor="input_title">Тема сообщения</label>
+                    {{ form.title.errors }}
+                    <label class="input_label_text" for="{{ form.title.id_for_label }}">Тема сообщения</label>
                     <div class="input_parameters_2">
-                        <input name="title" class="input_styles input_parameters_2" id="input_title" type="text"
-                               placeholder="Введите оглавление вопроса"/>
+                        {% render_field form.title class="input_styles input_parameters_2" placeholder="Введите оглавление вопроса" %}
                     </div>
 
                 </div>
 
                 <div class="bottom_form">
-                    <label class="input_label_text" htmlFor="input_message">Вопрос</label>
+                    {{ form.text.errors }}
+                    <label class="input_label_text" for="{{ form.text.id_for_label }}">Вопрос</label>
                     <div>
-                            <textarea name="text" class="input_styles input_parameters_3" id="input_message"
-                                      placeholder="Введите вопрос" rows="5"></textarea>
+                        {% render_field form.text class="input_styles input_parameters_3" placeholder="Введите вопрос" %}
                     </div>
                 </div>
 

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
-
 {% load static %}
+{% load widget_tweaks %}
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -44,13 +44,13 @@
 
     <div class="section__question_right">
         <div class="question__right">
-            <form method="post" action="{% url 'create_comment' question.id %}" class="info_res_right_form">
+            <form method="post" action="{% url 'question' question.id %}" class="info_res_right_form">
                 {% csrf_token %}
                 <div class="question_bottom_form">
-                    <label class="input_label_text" htmlFor="input_message">Добавить свой ответ</label>
+                    {{ form.text.errors }}
+                    <label class="input_label_text" for="input_message">Добавить свой ответ</label>
                     <div>
-              <textarea name="text" class="input_styles input_parameters_3" id="input_message"
-                        placeholder="Введите ответ" rows="5"></textarea>
+                        {% render_field form.text class="input_styles input_parameters_3" placeholder="Введите ответ" rows="5" %}
                     </div>
                 </div>
 
@@ -64,15 +64,15 @@
 </section>
 {% if request.user.is_staff %}
     <div class="question__action_box">
-    <form method="post" action="{% url 'remove_question' question.id %}">
-        {% csrf_token %}
-         <button type="submit" class="delite__question_button">Удалить вопрос</button>
-    </form>
+        <form method="post" action="{% url 'remove_question' question.id %}">
+            {% csrf_token %}
+            <button type="submit" class="delite__question_button">Удалить вопрос</button>
+        </form>
 
-    <form method="post" action="{% url 'answer_question' question.id %}">
-        {% csrf_token %}
-        <button type="submit" class="marked__question_button">Пометить как отвеченный</button>
-    </form>
+        <form method="post" action="{% url 'answer_question' question.id %}">
+            {% csrf_token %}
+            <button type="submit" class="marked__question_button">Пометить как отвеченный</button>
+        </form>
     </div>
 {% endif %}
 {% include 'forum/footer.html' %}
